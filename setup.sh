@@ -1,6 +1,7 @@
 #!/bin/bash
 
-pushd $HOME
+mkdir -p $HOME/ecole2016
+pushd $HOME/ecole2016
 
 REPOS="cq-formation-openacc"
 
