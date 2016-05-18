@@ -3,10 +3,10 @@
 mkdir -p $HOME/ecole2016
 pushd $HOME/ecole2016
 
-REPOS=( "cq-formation-openacc" "cq-formation-advanced-python" )
-BRANCHES=( "master" "ulaval" )
+REPOS=(cq-formation-openacc cq-formation-advanced-python)
+BRANCHES=(master ulaval)
 
-for i in ${#REPOS[@]}; do 
+for i in $(seq 0 $(( ${#REPOS[@]} - 1)) ); do 
   REPO=${REPOS[$i]}
   BRANCH=${BRANCHES[$i]}
   if [[ ! -d $REPO ]]; then
