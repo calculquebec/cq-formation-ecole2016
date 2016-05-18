@@ -1,19 +1,33 @@
 #!/bin/bash
 
+
+# self update
+pushd $HOME/cq-formation-ecole2016
+git pull
+popd
+
+# clone and/or update repos
 mkdir -p $HOME/ecole2016
 pushd $HOME/ecole2016
 
-REPOS=(cq-formation-openacc cq-formation-advanced-python)
-BRANCHES=(master ulaval)
+CONFIGS=(
+	"cq-formation-openacc master" 
+	"cq-formation-advanced-python ulaval"
+	"introduction_R master"
+	"cq-formation-premiers-pas master"
+	"cq-formation-intro-openmp mcgill"
+	)
 
-for i in $(seq 0 $(( ${#REPOS[@]} - 1)) ); do 
-  REPO=${REPOS[$i]}
-  BRANCH=${BRANCHES[$i]}
+for i in $(seq 0 $(( ${#CONFIGS[@]} - 1)) ); do 
+  CONFIG=${CONFIGS[$i]}
+  REPO=$(echo $CONFIG | cut -d " " -f 1)
+  BRANCH=$(echo $CONFIG | cut -d " " -f 2)
   if [[ ! -d $REPO ]]; then
     git clone https://github.com/calculquebec/$REPO.git
-    cd $REPO
+    pushd $REPO
     git checkout $BRANCH
     git pull
+    popd
   else
     pushd $REPO
     git checkout $BRANCH
