@@ -3,13 +3,20 @@
 mkdir -p $HOME/ecole2016
 pushd $HOME/ecole2016
 
-REPOS="cq-formation-openacc"
+REPOS=( "cq-formation-openacc" "cq-formation-advanced-python" )
+BRANCHES=( "master" "ulaval" )
 
-for REPO in $REPOS; do 
+for i in ${#REPOS[@]}; do 
+  REPO=${REPOS[$i]}
+  BRANCH=${BRANCHES[$i]}
   if [[ ! -d $REPO ]]; then
     git clone https://github.com/calculquebec/$REPO.git
+    cd $REPO
+    git checkout $BRANCH
+    git pull
   else
     pushd $REPO
+    git checkout $BRANCH
     git pull
     popd
   fi
