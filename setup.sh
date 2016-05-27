@@ -8,4 +8,4 @@ popd
 
 # clone and/or update repos
 mkdir -p $HOME/ecole2016
-$HOME/cq-formation-ecole2016/update.sh
+#$HOME/cq-formation-ecole2016/update.sh
