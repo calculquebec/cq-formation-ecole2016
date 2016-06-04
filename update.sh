@@ -10,6 +10,7 @@ CONFIGS=(
 	"cq-formation-intro-openmp mcgill"
 	"cq-formation-openspeedshop master"
 	"software-carpentry-unix-shell master"
+	"cq-formation-intro-mpi udem"
 	)
 
 for i in $(seq 0 $(( ${#CONFIGS[@]} - 1)) ); do 
@@ -31,3 +32,4 @@ for i in $(seq 0 $(( ${#CONFIGS[@]} - 1)) ); do
 done
 popd
 
+rm -rf /home/etudiant/test_michel_beland
