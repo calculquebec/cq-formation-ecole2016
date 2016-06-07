@@ -12,6 +12,7 @@ CONFIGS=(
 	"cq-formation-openspeedshop master"
 	"software-carpentry-unix-shell master"
 	"cq-formation-intro-mpi udem"
+	"cq-formation-analyse-visualisation-python master"
 	)
 
 for i in $(seq 0 $(( ${#CONFIGS[@]} - 1)) ); do 
