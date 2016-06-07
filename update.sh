@@ -8,6 +8,7 @@ CONFIGS=(
 	"introduction_R master"
 	"cq-formation-premiers-pas master"
 	"cq-formation-intro-openmp mcgill"
+	"cq-formation-advanced-openmp mcgill"
 	"cq-formation-openspeedshop master"
 	"software-carpentry-unix-shell master"
 	"cq-formation-intro-mpi udem"
