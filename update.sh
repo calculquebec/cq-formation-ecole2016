@@ -12,6 +12,7 @@ CONFIGS=(
 	"cq-formation-openspeedshop master"
 	"software-carpentry-unix-shell master"
 	"cq-formation-intro-mpi udem"
+	"cq-formation-advanced-mpi mcgill"
 	"cq-formation-analyse-visualisation-python master"
 	)
 
